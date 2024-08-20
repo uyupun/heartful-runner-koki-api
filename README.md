@@ -4,7 +4,7 @@
 
 - PHP 8.2 - 8.3
 - Composer
-- https://laravel.com/docs/11.x/releases
+- 参考: https://laravel.com/docs/11.x/releases
 
 ### セットアップ
 
@@ -12,6 +12,7 @@
 $ composer install
 $ cp .env.example .env
 $ php artisan key:generate
+$ touch database/database.sqlite
 $ php artisan serve
 ```
 
