@@ -14,3 +14,25 @@ $ cp .env.example .env
 $ php artisan key:generate
 $ php artisan serve
 ```
+
+### エンドポイント
+
+#### 動作確認用のエンドポイント
+
+```
+GET /api/hello
+```
+
+##### リクエスト
+
+```json
+-
+```
+
+##### レスポンス
+
+```json
+{
+    "message": "hello, world!"
+}
+```
