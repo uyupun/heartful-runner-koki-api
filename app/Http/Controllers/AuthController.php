@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function signup(SignupRequest $request){
+    public function signup(SignupRequest $request)
+    {
         $user = User::create([
             'user_id' => $request->user_id,
             'password' => Hash::make($request->password),
