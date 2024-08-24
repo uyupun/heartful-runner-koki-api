@@ -9,9 +9,6 @@ use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $now = Carbon::now();
