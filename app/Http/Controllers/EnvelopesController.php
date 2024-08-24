@@ -27,4 +27,15 @@ class EnvelopesController extends Controller
         $exist_envelope = Envelope::find($id) ? true : false;
         return response()->json(["exist_envelope" => $exist_envelope], 200);
     }
+
+    public function receive(Request $request, $id)
+    {
+        $envelope = Envelope::find($id);
+        $envelope->update([
+            'holder_id' => $request->user()->id,
+            'state' => 'RECEIVED',
+        ]);
+
+        return response()->json($envelope, 201);
+    }
 }
