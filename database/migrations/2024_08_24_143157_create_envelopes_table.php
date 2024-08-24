@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('envelopes', function (Blueprint $table) {
             $table->id();
-            $table->uuid('code')->primary();
+            $table->uuid('code')->unique();
             $table->string('title');
             $table->foreignId('sender_id')->constrained('users');
             $table->foreignId('holder_id')->constrained('users');
