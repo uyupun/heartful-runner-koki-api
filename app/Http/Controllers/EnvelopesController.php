@@ -21,4 +21,10 @@ class EnvelopesController extends Controller
 
         return response()->json($envelope, 201);
     }
+
+    public function verify($id)
+    {
+        $exist_envelope = Envelope::find($id) ? true : false;
+        return response()->json(["exist_envelope" => $exist_envelope], 200);
+    }
 }
