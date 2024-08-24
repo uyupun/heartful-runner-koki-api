@@ -188,3 +188,39 @@ Authorization: Bearer XXXXXXXXXX
     "updated_at": "2024-08-24T18:08:12.000000Z"
 }
 ```
+
+### メッセージの作成
+
+```
+POST /api/messages
+```
+
+##### リクエストヘッダ
+
+```
+Authorization: Bearer XXXXXXXXXX
+```
+
+##### リクエストボディ
+
+```json
+{
+    "envelope_id": 1,
+    "content": "がんばれ",
+    "writer_name": "ヒデアキ"
+}
+```
+
+##### レスポンス
+
+```json
+{
+    "id": 1,
+    "envelope_id": 1,
+    "content": "がんばれ",
+    "writer_id": 1,
+    "writer_name": "ヒデアキ",
+    "created_at": "2024-08-24T18:27:42.000000Z",
+    "updated_at": "2024-08-24T18:27:42.000000Z",
+}
+```
