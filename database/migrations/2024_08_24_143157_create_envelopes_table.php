@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->foreignId('sender_id')->constrained('users');
             $table->foreignId('holder_id')->constrained('users');
-            $table->string('state');
+            $table->enum('status', ['IN_PROGRESS', 'RECEIVED'])->default('IN_PROGRESS');
             $table->timestamps();
         });
     }
