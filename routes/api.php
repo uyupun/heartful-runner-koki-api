@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EnvelopesController;
+use App\Http\Controllers\MessagesController;
 use Illuminate\Http\Request;
 
 Route::prefix('auth')->group(function () {
@@ -15,6 +16,8 @@ Route::middleware('auth:sanctum')->prefix('/envelopes')->group(function () {
     Route::post('/{id}/verify', [EnvelopesController::class, 'verify']);
     Route::put('/{id}', [EnvelopesController::class, 'receive']);
 });
+
+Route::post('/messages', [MessagesController::class, 'create'])->middleware('auth:sanctum');
 
 Route::get('/user', function (Request $request) {
     return $request->user();
