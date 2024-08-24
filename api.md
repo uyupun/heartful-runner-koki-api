@@ -178,7 +178,7 @@ Authorization: Bearer XXXXXXXXXX
 
 ```json
 {
-    "id": 2,
+    "id": 1,
     "code": "0d518795-a026-4a89-8bf2-d2e16c1b6cd0",
     "title": "bbb",
     "sender_id": 1,
