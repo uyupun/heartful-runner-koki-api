@@ -52,7 +52,7 @@ Authorization: Bearer XXXXXXXXXX
 ### サインアップ
 
 ```
-GET /api/signup
+POST /api/signup
 ```
 
 ##### リクエストボディ
@@ -75,7 +75,7 @@ GET /api/signup
 ### サインイン
 
 ```
-GET /api/signin
+POST /api/signin
 ```
 
 ##### リクエストボディ
@@ -92,5 +92,34 @@ GET /api/signin
 ```json
 {
     "token": "XXXXXXXXXX"
+}
+```
+
+### 寄せ書きの作成
+
+```
+POST /api/envelopes
+```
+
+##### リクエストボディ
+
+```json
+{
+    "title": "test"
+}
+```
+
+##### レスポンス
+
+```json
+{
+    "id": 1,
+    "code": "82d76e1c-1df2-4e0d-a4a2-a89ce6d70791",
+    "title": "ccc",
+    "sender_id": 1,
+    "holder_id": 1,
+    "state": "IN_PROGRESS",
+    "created_at": "2024-08-24T17:27:32.000000Z",
+    "updated_at": "2024-08-24T17:27:32.000000Z"
 }
 ```
