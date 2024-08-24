@@ -10,7 +10,10 @@ Route::prefix('auth')->group(function () {
     Route::post('/signin', [AuthController::class, 'signin']);
 });
 
-Route::post('/envelopes', [EnvelopesController::class, 'create'])->middleware('auth:sanctum');
+Route::middleware('auth:sanctum')->prefix('/envelopes')->group(function () {
+    Route::post('/', [EnvelopesController::class, 'create']);
+    Route::post('/{id}/verify', [EnvelopesController::class, 'verify']);
+});
 
 Route::get('/user', function (Request $request) {
     return $request->user();
