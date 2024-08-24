@@ -18,24 +18,6 @@ $ php artisan db:seed
 $ php artisan serve
 ```
 
-### エンドポイント
+### ドキュメント
 
-#### 動作確認用のエンドポイント
-
-```
-GET /api/hello
-```
-
-##### リクエスト
-
-```json
--
-```
-
-##### レスポンス
-
-```json
-{
-    "message": "hello, world!"
-}
-```
+[API設計](api.md)
