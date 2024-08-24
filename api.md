@@ -123,3 +123,23 @@ POST /api/envelopes
     "updated_at": "2024-08-24T17:27:32.000000Z"
 }
 ```
+
+### 寄せ書きの存在確認
+
+```
+POST /api/envelopes/{id}/verify
+```
+
+##### リクエストボディ
+
+```json
+-
+```
+
+##### レスポンス
+
+```json
+{
+    "exist_envelope": true,
+}
+```
