@@ -159,7 +159,7 @@ Authorization: Bearer XXXXXXXXXX
 ### 寄せ書きの受け取り
 
 ```
-POST /api/envelopes/{id}
+PUT /api/envelopes/{id}
 ```
 
 ##### リクエストヘッダ
@@ -180,12 +180,24 @@ Authorization: Bearer XXXXXXXXXX
 {
     "id": 1,
     "code": "0d518795-a026-4a89-8bf2-d2e16c1b6cd0",
-    "title": "bbb",
+    "title": "test",
     "sender_id": 1,
     "holder_id": 1,
     "state": "RECEIVED",
     "created_at": "2024-08-24T17:26:13.000000Z",
-    "updated_at": "2024-08-24T18:08:12.000000Z"
+    "updated_at": "2024-08-24T18:08:12.000000Z",
+    "messages": [
+        {
+            "id": 1,
+            "envelope_id": 1,
+            "content": "がんばれ",
+            "writer_id": 1,
+            "writer_name": "ヒデアキ",
+            "created_at": null,
+            "updated_at": null
+        }
+        ...
+    ]
 }
 ```
 

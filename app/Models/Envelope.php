@@ -16,4 +16,9 @@ class Envelope extends Model
         'holder_id',
         'state',
     ];
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

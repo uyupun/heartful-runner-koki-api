@@ -30,7 +30,7 @@ class EnvelopesController extends Controller
 
     public function receive(Request $request, $id)
     {
-        $envelope = Envelope::find($id);
+        $envelope = Envelope::with('messages')->find($id);
         $envelope->update([
             'holder_id' => $request->user()->id,
             'state' => 'RECEIVED',
