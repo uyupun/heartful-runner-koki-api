@@ -101,6 +101,12 @@ POST /api/auth/signin
 POST /api/envelopes
 ```
 
+##### リクエストヘッダ
+
+```
+Authorization: Bearer XXXXXXXXXX
+```
+
 ##### リクエストボディ
 
 ```json
@@ -130,6 +136,12 @@ POST /api/envelopes
 POST /api/envelopes/{id}/verify
 ```
 
+##### リクエストヘッダ
+
+```
+Authorization: Bearer XXXXXXXXXX
+```
+
 ##### リクエストボディ
 
 ```json
@@ -141,5 +153,38 @@ POST /api/envelopes/{id}/verify
 ```json
 {
     "exist_envelope": true,
+}
+```
+
+### 寄せ書きの受け取り
+
+```
+POST /api/envelopes/{id}
+```
+
+##### リクエストヘッダ
+
+```
+Authorization: Bearer XXXXXXXXXX
+```
+
+##### リクエストボディ
+
+```json
+-
+```
+
+##### レスポンス
+
+```json
+{
+    "id": 2,
+    "code": "0d518795-a026-4a89-8bf2-d2e16c1b6cd0",
+    "title": "bbb",
+    "sender_id": 1,
+    "holder_id": 1,
+    "state": "RECEIVED",
+    "created_at": "2024-08-24T17:26:13.000000Z",
+    "updated_at": "2024-08-24T18:08:12.000000Z"
 }
 ```
