@@ -52,7 +52,7 @@ Authorization: Bearer XXXXXXXXXX
 ### サインアップ
 
 ```
-POST /api/signup
+POST /api/auth/signup
 ```
 
 ##### リクエストボディ
@@ -75,7 +75,7 @@ POST /api/signup
 ### サインイン
 
 ```
-POST /api/signin
+POST /api/auth/signin
 ```
 
 ##### リクエストボディ
