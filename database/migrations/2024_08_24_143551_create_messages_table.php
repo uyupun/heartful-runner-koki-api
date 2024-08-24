@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('envelope_id')->constrained('envelopes');
             $table->string('content');
             $table->foreignId('writer_id')->constrained('users');
             $table->string('writer_name');
