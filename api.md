@@ -48,3 +48,49 @@ Authorization: Bearer XXXXXXXXXX
     "updated_at": "2024-01-01T00:00:00.000000Z"
 }
 ```
+
+### サインアップ
+
+```
+GET /api/signup
+```
+
+##### リクエストボディ
+
+```json
+{
+    "user_id": "test",
+    "password": "password"
+}
+```
+
+##### レスポンス
+
+```json
+{
+    "token": "XXXXXXXXXX"
+}
+```
+
+### サインイン
+
+```
+GET /api/signin
+```
+
+##### リクエストボディ
+
+```json
+{
+    "user_id": "test",
+    "password": "password"
+}
+```
+
+##### レスポンス
+
+```json
+{
+    "token": "XXXXXXXXXX"
+}
+```
