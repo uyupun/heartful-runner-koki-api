@@ -13,6 +13,7 @@ Route::prefix('auth')->group(function () {
 Route::middleware('auth:sanctum')->prefix('/envelopes')->group(function () {
     Route::post('/', [EnvelopesController::class, 'create']);
     Route::post('/{id}/verify', [EnvelopesController::class, 'verify']);
+    Route::put('/{id}', [EnvelopesController::class, 'receive']);
 });
 
 Route::get('/user', function (Request $request) {
