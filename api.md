@@ -160,7 +160,7 @@ Authorization: Bearer XXXXXXXXXX
 ### 寄せ書きの受け取り
 
 ```
-PUT /api/envelopes/{id}
+PUT /api/envelopes
 ```
 
 ##### リクエストヘッダ
@@ -172,7 +172,9 @@ Authorization: Bearer XXXXXXXXXX
 ##### リクエストボディ
 
 ```json
--
+{
+    "code": "0d518795-a026-4a89-8bf2-d2e16c1b6cd0"
+}
 ```
 
 ##### レスポンス
