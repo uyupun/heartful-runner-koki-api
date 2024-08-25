@@ -32,9 +32,9 @@ class EnvelopesController extends Controller
         ], 200);
     }
 
-    public function receive(Request $request, $id)
+    public function receive(Request $request)
     {
-        $envelope = Envelope::with('messages')->find($id);
+        $envelope = Envelope::with('messages')->firstWhere('code', $request->code);
         $envelope->update([
             'holder_id' => $request->user()->id,
             'state' => 'RECEIVED',
