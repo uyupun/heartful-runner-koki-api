@@ -22,10 +22,11 @@ class EnvelopesController extends Controller
         return response()->json($envelope, 201);
     }
 
-    public function verify($id)
+    public function verify(Request $request)
     {
-        $exist_envelope = Envelope::find($id) ? true : false;
-        return response()->json(["exist_envelope" => $exist_envelope], 200);
+        $envelope = Envelope::where('code', $request->code)->first();
+        $exist_envelope = $envelope ? true : false;
+        return response()->json(["exist_envelope" => $exist_envelope, "envelope_id" => $exist_envelope ? $envelope->id : null], 200);
     }
 
     public function receive(Request $request, $id)
