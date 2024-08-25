@@ -133,7 +133,7 @@ Authorization: Bearer XXXXXXXXXX
 ### 寄せ書きの存在確認
 
 ```
-POST /api/envelopes/{id}/verify
+POST /api/envelopes/verify
 ```
 
 ##### リクエストヘッダ
@@ -153,6 +153,7 @@ Authorization: Bearer XXXXXXXXXX
 ```json
 {
     "exist_envelope": true,
+    "envelope_id": 1
 }
 ```
 

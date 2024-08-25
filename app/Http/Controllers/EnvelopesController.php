@@ -24,9 +24,12 @@ class EnvelopesController extends Controller
 
     public function verify(Request $request)
     {
-        $envelope = Envelope::where('code', $request->code)->first();
+        $envelope = Envelope::firstWhere('code', $request->code);
         $exist_envelope = $envelope ? true : false;
-        return response()->json(["exist_envelope" => $exist_envelope, "envelope_id" => $exist_envelope ? $envelope->id : null], 200);
+        return response()->json([
+            'exist_envelope' => $exist_envelope,
+            'envelope_id' => $exist_envelope ? $envelope->id : null
+        ], 200);
     }
 
     public function receive(Request $request, $id)
