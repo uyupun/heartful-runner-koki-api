@@ -14,7 +14,7 @@ Route::prefix('auth')->group(function () {
 Route::middleware('auth:sanctum')->prefix('/envelopes')->group(function () {
     Route::post('/', [EnvelopesController::class, 'create']);
     Route::post('/verify', [EnvelopesController::class, 'verify']);
-    Route::put('/{id}', [EnvelopesController::class, 'receive']);
+    Route::put('/', [EnvelopesController::class, 'receive']);
 });
 
 Route::post('/messages', [MessagesController::class, 'create'])->middleware('auth:sanctum');
